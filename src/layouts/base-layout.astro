@@ -1,6 +1,7 @@
 ---
 const { title } = Astro.props;
 
+import Footer from '@components/layout/footer.astro';
 import Menu from '@components/layout/menu.astro';
 import '@styles/global.css';
 ---
@@ -9,14 +10,28 @@ import '@styles/global.css';
 	<head>
 		<meta charset='utf-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
 	</head>
 	<body>
 		<!-- page top -->
-		<Menu />
-		<div>
-			<!-- header -->
-			<slot />
+		<div class='page-top'>
+			<Menu />
+			<main><slot /></main>
 		</div>
 		<!-- footer -->
+		<Footer />
 	</body>
 </html>
+
+<style>
+	body {
+		@apply flex flex-col min-h-svh;
+	}
+	main {
+		@apply grow;
+	}
+	.page-top {
+		@apply flex flex-col grow;
+	}
+</style>

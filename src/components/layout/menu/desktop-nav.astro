@@ -1,0 +1,16 @@
+---
+import { links } from '@components/layout/menu/links';
+---
+
+<div class='hidden flex-none lg:block'>
+	<ul class='menu menu-horizontal'>
+		<!-- Navbar menu content here -->
+		{
+			links.map((link) => (
+				<li>
+					<a href={link.href}>{link.name}</a>
+				</li>
+			))
+		}
+	</ul>
+</div>
