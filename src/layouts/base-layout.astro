@@ -3,17 +3,20 @@ const { title } = Astro.props;
 
 import Footer from '@components/layout/footer.astro';
 import Menu from '@components/layout/menu.astro';
+
+import '@fontsource-variable/inter';
+import '@fontsource-variable/archivo';
 import '@styles/global.css';
 ---
 
-<html lang='en' dir='ltr' data-theme='dim'>
+<html lang='en' dir='ltr' data-theme='black'>
 	<head>
 		<meta charset='utf-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1' />
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class='text-theme-green font-inter'>
 		<!-- page top -->
 		<div class='page-top'>
 			<Menu />
@@ -26,7 +29,7 @@ import '@styles/global.css';
 
 <style>
 	body {
-		@apply flex flex-col min-h-svh;
+		@apply min-h-svh flex flex-col;
 	}
 	main {
 		@apply grow;

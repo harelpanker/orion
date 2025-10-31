@@ -1,0 +1,12 @@
+---
+import BaseLayout from '@layouts/base-layout.astro';
+import Container from '@components/container.astro';
+---
+
+<BaseLayout>
+	<section>
+		<Container class='py-6 prose'>
+			<slot />
+		</Container>
+	</section>
+</BaseLayout>
